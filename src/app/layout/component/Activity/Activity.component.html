@@ -1,0 +1,28 @@
+<section class="section">
+  <header class="banner-group">
+    <h1 class="banner__heading">{{cityName}}</h1>
+  </header>
+
+  <div class="place-btn-outer">
+    <ul class="row place-btn-group">
+      <li class="place-btn-item clickimage" routerLink="/main"><mat-icon>home</mat-icon><span>首頁</span></li>
+      <li class="place-btn-item"><mat-icon> local_activity</mat-icon><span>觀光活動</span></li>
+    </ul>
+  </div>
+  <mat-progress-spinner [mode]="'indeterminate'" [strokeWidth]="5"  *ngIf="loading$ | async"></mat-progress-spinner>
+  <app-sectioncard [data]="Activity()" [type]="'Activity'"></app-sectioncard>
+ <!--filterPage__pagination-->
+ <div class="filterPage__pagination flex-center">
+  <button *ngIf="index!=1" (click)="checkFrontPage()" class="filterPage__pagination-prev mr-12">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <ul class="filterPage__pagination-list flex-center">
+    <li *ngFor="let item of prevArray" (click)="checkPrev(item)" class="filterPage__pagination-item">
+      <a class="filterPage__pagination-num" [class.current]="this.item === index">{{item}}</a>
+    </li>
+  </ul>
+  <button *ngIf="index!=MaxPage" (click)="checkBackPage()"  class="filterPage__pagination-prev ml-12">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>
+</section>

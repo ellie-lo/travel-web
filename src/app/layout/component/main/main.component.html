@@ -1,0 +1,19 @@
+<header class="banner-group">
+  <div class="banner">
+    <div class="peoplepic"></div>
+  </div>
+  <h1 class="banner__heading">探索。<br>福爾摩沙</h1>
+</header>
+<section class="section" *ngFor="let searchtitle of searchtitles">
+  <div class="head-group">
+    <div class="headtext-front">
+      <img class="section-icon" src="../../../../assets/img/Location1.png" alt="">
+      <p class="headtext-title title-3">{{searchtitle.title}}</p>
+    </div>
+    <div class="headtext-end">
+      <a class="linkText a-clear" [routerLink]="['..','searchmore',searchtitle.title,searchtitle.entitle]">更多{{searchtitle.title}}</a>
+    </div>
+  </div>
+  <app-sectioncard [data]="searchtitle.datas" [type]="searchtitle.entitle"></app-sectioncard>
+</section>
+

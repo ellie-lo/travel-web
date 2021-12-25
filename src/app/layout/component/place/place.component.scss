@@ -1,0 +1,132 @@
+/*banner*/
+header{
+  margin-bottom:1rem ;
+}
+.banner-group{
+  position: relative;
+  margin-top: 8px;
+  height: 130px;
+  width: 100%;
+  border-radius: 0.4rem;
+  box-shadow: 0px 14px 24px rgba(0, 0, 0, 0.04);
+  background-image: url(../../../../assets/img/p01.jpg);
+  background-position:top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+.banner-group::after{
+  content: '';
+  background-color: rgba(73, 72, 72, 0.5);
+  position: absolute;
+  height: 130px;
+  width: 100%;
+}
+
+.banner__heading{
+position: absolute;
+font-weight: 900;
+font-size: 3rem;
+letter-spacing: 0.6rem;
+color: #fff;
+top: 50%;
+left: 8%;
+transform: translateY(-50%);
+z-index: 3;
+}
+
+
+ul,li{
+  margin: 0;
+  padding: 0;
+}
+
+.place-btn-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:1px solid var(--casper-color-g);
+  border-radius: 0.4rem;
+  padding: 8px 12px;
+  color: var(--casper-color-g);
+  font-size: 1rem;
+  transition: all 0.3s;
+  margin: 8px 12px 8px 0;
+}
+
+// ul .place-btn-item:nth-child(2){
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border:1px solid var(--casper-color-g);
+//   background-color: var(--casper-color-g);
+//   border-radius: 0.4rem;
+//   padding: 8px 12px;
+//   color: #fff;
+//   font-size: 1rem;
+// }
+
+ul .place-btn-item.isactivebtn{
+  border:1px solid var(--casper-color-g);
+  background-color: var(--casper-color-g);
+  color: #fff;
+}
+
+ul .place-btn-item:hover{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:1px solid var(--casper-color-g);
+  background-color: var(--casper-color-g);
+  border-radius: 0.4rem;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/*spinner*/
+.page-spinner{
+display: flex;
+justify-content: center;
+height: 100%;
+margin: 50px 0;
+}
+
+
+
+
+/*RWD*/
+@media (max-width: 1200px){
+  .banner-group{
+    height: 100px;
+  }
+  .banner__heading{
+    font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px){
+  .banner-group{
+    height: 80px;
+  }
+  .banner__heading{
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px){
+  .banner-group{
+    height: 60px;
+  }
+  .banner__heading{
+    font-size: 1.5rem;
+    }
+    .place-btn-item{
+      font-size: 0.8rem;
+      padding: 4px 8px;
+  }
+  ul .place-btn-item:nth-child(2){
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+}

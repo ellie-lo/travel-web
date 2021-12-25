@@ -1,0 +1,29 @@
+<div class="row-s mg-r">
+  <div class="col-4 pd-r clickimage" *ngFor="let item of data">
+    <!-- <div class="card-group" (mousedown)="getPostPage(item)" [routerLink]="['articles',item.ID]" > -->
+      <div class="card-group"  (mousedown)="getPostPage(item)" >
+      <div class="imgbox">
+        <div class="imgbox_inner imgbox_inner-2-1">
+          <div class="img" [style.backgroundImage]="test(item.Picture.PictureUrl1)"></div>
+        </div>
+      </div>
+      <div class="card-info">
+        <p class="info-title font-w7">{{item.Name}}</p>
+        <div class="info-content">
+          <div class="info-time" *ngIf="item.OpenTime">
+            <mat-icon class="info-icon">watch_later</mat-icon>
+            <p class="info-text ellipsis">{{item.OpenTime}}</p>
+          </div>
+          <div class="info-time" *ngIf="item.StartTime">
+            <mat-icon class="info-icon">watch_later</mat-icon>
+            <p class="info-text ">{{item.StartTime | date:'yyyy/MM/dd'}}</p>
+          </div>
+          <div class="info-place" *ngIf="item.Address">
+            <mat-icon class="info-icon"> place</mat-icon>
+            <p class="info-text ellipsis">{{item.Address}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+<div id="printthis" class="printPage">
+  <section class="article-top ">
+    <div class="head-group">
+      <div class="headtext-front">
+        <mat-icon (click)="goBack()" class="articles-front-icon clickimage">keyboard_arrow_left</mat-icon>
+        <p class="title-2">{{getarticlecontent?.Name}}</p>
+      </div>
+      <div class="headtext-end">
+        <div (click)="printpage()" class="end-icon">
+          <mat-icon class="headtext-end-icon">print</mat-icon>
+        </div>
+        <div (click)="goShare()" class="end-icon">
+          <mat-icon class="headtext-end-icon">share</mat-icon>
+        </div>
+      </div>
+    </div>
+    <div class="article-banner">
+      <img class="slider-pic" [class.slider_pic_container]="!this.getarticlecontent?.Picture.PictureUrl1"
+        [src]="getpicture(getarticlecontent?.Picture.PictureUrl1)"
+        alt={{getarticlecontent?.Picture.PictureDescription1}}>
+    </div>
+  </section>
+  <section class="article-head">
+    <div class="article-head-list" *ngIf="getarticlecontent?.StartTime ">
+      <div class="article-head-title">
+        <mat-icon>calendar_today</mat-icon>
+        <span>開始日期 :</span>
+      </div>
+      <p>{{getarticlecontent?.StartTime| date:'yyyy/MM/dd'}}</p>
+    </div>
+    <div class="article-head-list" *ngIf="getarticlecontent?.OpenTime">
+      <div class="article-head-title">
+        <mat-icon>access_time</mat-icon>
+        <span>開放時間 :</span>
+      </div>
+      <p>{{getarticlecontent?.OpenTime}}</p>
+    </div>
+    <div class="article-head-list" *ngIf="getarticlecontent?.Address">
+      <div class="article-head-title">
+        <mat-icon>room</mat-icon>
+        <span>景點地址 :</span>
+      </div>
+      <p>{{getarticlecontent?.Address}}</p>
+    </div>
+    <div class="article-head-list" *ngIf="getarticlecontent?.Phone">
+      <div class="article-head-title">
+        <mat-icon>phone</mat-icon>
+        <span>連絡電話 :</span>
+      </div>
+      <p>{{getarticlecontent?.Phone}}</p>
+    </div>
+    <div class="article-head-list" *ngIf="getarticlecontent?.WebsiteUrl">
+      <div class="article-head-title">
+        <mat-icon>language</mat-icon>
+        <span>活動網址 :</span>
+      </div>
+      <p>{{getarticlecontent?.WebsiteUrl }}</p>
+    </div>
+    <div class="article-head-list" *ngIf="getarticlecontent?.Class1">
+      <div class="article-head-title">
+        <mat-icon> local_offer</mat-icon>
+        <span>類型 :</span>
+      </div>
+      <p>{{getarticlecontent?.Class1}}</p>
+    </div>
+  </section>
+
+
+  <section class="article-content" *ngIf="getarticlecontent?.DescriptionDetail">
+    <h4 class="title-4">-景點介紹-</h4>
+    <article>
+      {{getarticlecontent?.DescriptionDetail}}
+    </article>
+  </section>
+
+  <section class="article-content" *ngIf="getarticlecontent?.Description">
+    <h4 class="title-4">-簡介-</h4>
+    <article>
+      {{getarticlecontent?.Description}}
+    </article>
+  </section>
+
+  <section class="article-content">
+    <h4 class="title-4">-交通方式-</h4>
+    <article *ngIf="getarticlecontent?.TravelInfo">
+      {{getarticlecontent?.TravelInfo}}
+    </article>
+    <!--google-map-->
+    <google-map height="500px" width="100%" [center]="center" [options]="mapOptions">
+      <map-marker #markerElem [position]="position" ></map-marker>
+    </google-map>
+  </section>
+  <section class="article-content">
+    <h4 class="title-4">-鄰近景點-</h4>
+    <app-sectioncard [data]="getclose()" [type]="this.type"></app-sectioncard>
+  </section>
+</div>

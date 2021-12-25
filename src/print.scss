@@ -1,0 +1,26 @@
+@media print{
+  @page{
+    size: A4 portrait;
+    margin: 1cm;
+  }
+  html,body,#printthis{
+    width: 100% !important;
+    height: 100% !important;
+    display: inline-block;
+    overflow: visible;
+  }
+	mat-sidenav {
+		display: none !important;
+	}
+  mat-sidenav-content{
+    margin-left: 0px !important;
+
+  }
+  mat-sidenav-content::-webkit-scrollbar {
+    display: none !important;
+}
+  .article-content{
+    page-break-before: always;
+   page-break-after: always;
+}
+}

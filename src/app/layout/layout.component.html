@@ -1,0 +1,118 @@
+<mat-toolbar>
+  <!-- nav -->
+  <div class="nav">
+    <button (click)="toggleClick(sideNav)" mat-icon-button color="" aria-label="Example icon button with a menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="nav-logo"><img src="../../assets/img/LOGO.png" alt="Travel-logo"></div>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container (window:resize)="onResize($event)">
+  <!-- <mat-sidenav  mode="side"  opened="true" disableClose="" #sideNav> -->
+  <mat-sidenav [mode]="mode" [opened]="sideopen" #sideNav>
+    <div class="side-container scrollbar-change">
+      <!-- side-container -->
+      <div class="navlogo clickimage">
+        <!-- <a routerLink="/main"> -->
+          <a (click)="refresh()">
+          <img width="116.5px" height="47px" src="../../assets/img/LOGO.png" alt="Travle">
+        </a>
+      </div>
+
+      <!-- inputgroup -->
+      <div class="inputgroup mgt24" id="form">
+        <input type="text" class="sidnavInput" placeholder="搜尋關鍵字" #addtext (keyup.enter)="searchText(addtext.value)">
+        <div class="iconframe" (click)="searchText(addtext.value)">
+          <mat-icon class="iconframe-btn">search</mat-icon>
+        </div>
+      </div>
+
+      <hr>
+      <p class="sideNavGroup-title font-w7 mgt24 mgb12">台灣縣市主題搜尋</p>
+      <div tabindex="-1" (focusin)="openDrop($event)" (focusout)="closeDrop($event)" class="inputgroup mgt24">
+        <!-- <div tabindex="-1" (focusin)="openDrop($event)" class="inputgroup mgt24"> -->
+        <span class="sidnavInput">{{CityName}}</span>
+        <div class="iconframe">
+          <img src="../../assets/img/Arrow - Down Circle.png" alt="">
+        </div>
+        <!-- search-dropdown -->
+        <div *ngIf="isActive" class="search-dropdown" #dropdown>
+          <div class="select-group">
+            <div class="select-head">
+              <h4 class="font-w7">選擇縣市</h4>
+            </div>
+            <div class="select-bt-group">
+              <ul class="select-bt row">
+                <!-- <li class="bt-style" *ngFor="let place of places" (mousedown)="checkthis(place)" [routerLink]="['place',place]"><span>{{place}}</span></li> -->
+                <li class="bt-style " *ngFor="let place of places" (mousedown)="activepalce(place)">
+                  <span>{{place}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sideNavGroup -->
+      <div class="sideNavGroup">
+        <a [class.active]="classItems[0].en==dataset.select" class="sideiconlist active clickimage"
+          (click)="getitem(classItems[0].en)">
+          <div class="iconouter bgc-g">
+            <i class="twicon twicon-zeelandia"></i>
+          </div>
+          <p class="pname">熱門景點</p>
+        </a>
+        <a [class.active]="classItems[1].en==dataset.select" class="sideiconlist active clickimage"
+          (click)="getitem(classItems[1].en)">
+          <div class="iconouter bgc-o">
+            <i class="twicon twicon-tapioca"></i>
+          </div>
+          <p class="pname">美食品嚐</p>
+        </a>
+        <a [class.active]="classItems[2].en==dataset.select" class="sideiconlist active clickimage"
+          (click)="getitem(classItems[2].en)">
+          <div class="iconouter bgc-br">
+            <i class="twicon twicon-grand-hotel"></i>
+          </div>
+          <p class="pname">住宿推薦</p>
+        </a>
+        <a [class.active]="classItems[3].en==dataset.select" class="sideiconlist active clickimage"
+          (click)="getitem(classItems[3].en)">
+          <div class="iconouter bgc-lg">
+            <i class="twicon twicon-balloon"></i>
+          </div>
+          <p class="pname">觀光活動</p>
+        </a>
+      </div>
+      <div class="sideNavGroupBtn">
+        <button class="select-button clickimage" (click)="getcontent(dataset)">搜尋</button>
+      </div>
+    </div>
+  </mat-sidenav>
+
+
+  <mat-sidenav-content>
+    <!-- 原page1 -->
+    <div class="wrapper" id="wrapper">
+      <div class="container">
+        <router-outlet></router-outlet>
+      </div>
+
+
+      <!-- footer -->
+      <footer class="row bgc-g">
+        <div class="footer-group">
+          <h3 class="footer-text col-4">Taiwan Travle</h3>
+          <div class="creator-group col-4">
+            <div class="creator-item"><span>UI Design :</span><a class="creator-link"
+                href="https://2021.thef2e.com/users/6296427084285739194?week=1&type=1"  target="_blank">jhen</a></div>
+            <div class="creator-item"><span>Front-end :</span><a class="creator-link" href="https://lokony82.wixsite.com/-portfolio"  target="_blank">Ellie</a></div>
+          </div>
+          <div class="source col-4"><span>Source:交通部PTX服務平臺</span></div>
+        </div>
+      </footer>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

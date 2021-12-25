@@ -1,0 +1,7 @@
+{
+  "/MOTC": {
+    "target": "https://ptx.transportdata.tw",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

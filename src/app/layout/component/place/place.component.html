@@ -1,0 +1,33 @@
+<section class="section">
+  <header class="banner-group">
+    <h1 class="banner__heading">{{keyword}}</h1>
+  </header>
+
+  <div class="place-btn-outer">
+    <ul class="row place-btn-group">
+      <li class="place-btn-item clickimage" routerLink="/main">
+        <mat-icon>home</mat-icon><span>首頁</span>
+      </li>
+      <li *ngFor="let searchtitle of searchtitles" [class.isactivebtn]="this.EnSort==searchtitle.entitle"
+        class="place-btn-item clickimage" (click)="change(searchtitle.entitle)">
+        <mat-icon>{{searchtitle.icon}}</mat-icon><span>{{searchtitle.title}}</span>
+      </li>
+    </ul>
+  </div>
+  <ng-template #loading>
+    <div class="page-spinner">
+      <mat-spinner [strokeWidth]="strokeWidth"></mat-spinner>
+    </div>
+  </ng-template>
+  <!-- <ng-template #loading>
+    <div class="page-spinner">
+      <p>找不到資料</p>
+    </div>
+  </ng-template> -->
+  <mat-progress-spinner [mode]="'indeterminate'" [strokeWidth]="5"  *ngIf="loading$ | async"></mat-progress-spinner>
+  <!-- <app-sectioncard [data]="data$ | async | filterdata:keyword" [type]="this.EnSort"></app-sectioncard> -->
+  <app-sectioncard  [data]="getSelectData()" [type]="this.EnSort"></app-sectioncard>
+
+
+
+</section>

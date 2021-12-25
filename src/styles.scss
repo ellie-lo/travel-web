@@ -1,1 +1,147 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+*{
+  font-family: 'Noto Sans TC',Roboto, "Helvetica Neue", sans-serif ;
+  box-sizing: border-box;
+  position: relative;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Noto Sans TC'!important;
+  margin: 0 !important;
+}
+.a-clear{text-decoration: none;}
+
+p{
+  color: #222222;
+}
+
+a{
+  text-decoration: none;
+  color: #222222;
+}
+
+ol,ul{
+  list-style: none;
+}
+
+
+
+/*google Noto Sans TC*/
+.font-w7{font-weight: 700 !important;}
+.font-w9{font-weight: 900 !important;}
+
+
+/*color*/
+
+:root {
+  --casper-color-g: rgba(63, 177, 149, 1);
+  --casper-color-p: rgba(196, 153, 255, 1);
+  --casper-color-r: rgba(255, 153, 153, 1);
+  --casper-color-lb: rgba(100, 197, 227, 1);
+  --casper-color-b: rgba(129, 164, 255, 1);
+  --casper-color-o: rgba(253, 151, 94, 1);
+  --casper-color-br: rgba(193, 123, 83, 1);
+  --casper-color-lg: rgba(143, 202, 107, 1);
+
+}
+
+.bgc-g{background-color: rgba(63, 177, 149, 1);}
+.bgc-p{background-color: rgba(196, 153, 255, 1);}
+.bgc-r{background-color: rgba(255, 153, 153, 1);}
+.bgc-lb{background-color:rgba(100, 197, 227, 1);}
+.bgc-b{background-color: rgba(129, 164, 255, 1);}
+.bgc-o{background-color: rgba(253, 151, 94, 1);}
+.bgc-br{background-color: rgba(193, 123, 83, 1);}
+.bgc-lg{background-color: rgba(143, 202, 107, 1);}
+
+
+
+/*layout*/
+
+/*container*/
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: 1680px;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pd-r{
+  padding-right: 16px;
+}
+.mg-r{
+  margin-right: -16px;
+}
+
+.col-4{
+  flex: 0 0 auto;
+  width: 33.3333333333%;
+}
+
+.imgbox_inner-1-1{
+  padding-top: 100%;
+}
+.imgbox_inner-2-1{
+  padding-top: 50%;
+}
+.imgbox_inner-4-3{
+  padding-top: calc(100% * 3/4);
+}
+
+
+/*mouse*/
+.clickimage{
+  cursor: pointer;
+}
+
+/**/
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: rgba(63, 177, 149, 1)!important;
+}
+mat-progress-spinner {
+  margin: 30px 0;
+  left: 40%;
+  z-index: 5;
+}
+
+/*列印頁面*/
+@media print{
+  @page{
+         margin: 1cm;
+         widows: 2;
+         orphans: 3;
+       }
+  html,body,#printthis{
+      width: 100% ;
+      height: 100% ;
+      display: block;
+      overflow-y:visible;
+      position: relative;
+    }
+  article{
+    page-break-inside: avoid;
+  }
+  mat-sidenav {
+   		display: none !important;
+    }
+  mat-sidenav-content{
+      margin-left: 0px !important;
+    }
+  mat-sidenav-content::-webkit-scrollbar {
+     display: none !important;
+    }
+
+}
+

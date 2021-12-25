@@ -1,0 +1,25 @@
+<section class="article-top ">
+  <div class="head-group">
+    <div class="headtext-front">
+      <mat-icon routerLink="/main" class="articles-front-icon clickimage">keyboard_arrow_left</mat-icon>
+      <p class="title-2">{{searchtitle}}</p>
+    </div>
+  </div>
+  <app-sectioncard [data]="getDataCard()" [type]="this.EnSort"></app-sectioncard>
+  <!-- <app-sectioncard [data]="getDatas(0,9)"></app-sectioncard> -->
+
+  <!--filterPage__pagination-->
+  <div class="filterPage__pagination flex-center">
+    <button *ngIf="index!=1" (click)="checkFrontPage()" class="filterPage__pagination-prev mr-12">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <ul class="filterPage__pagination-list flex-center">
+      <li *ngFor="let item of prevArray" (click)="checkPrev(item)" class="filterPage__pagination-item">
+        <a class="filterPage__pagination-num" [class.current]="this.item === index">{{item}}</a>
+      </li>
+    </ul>
+    <button *ngIf="index!=MaxPage" (click)="checkBackPage()" class="filterPage__pagination-prev ml-12">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
+</section>
