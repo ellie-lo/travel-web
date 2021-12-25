@@ -15,7 +15,6 @@ export class PlaceComponent implements OnInit {
   keyword: string = '';
   EnSort = '';
   EnChange = '';
-  EnChae = '';
   index: number = 1;
   prev: number = 9;
   MaxPage: number = 1;
