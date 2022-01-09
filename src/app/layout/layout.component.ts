@@ -111,7 +111,6 @@ export class LayoutComponent implements OnInit {
   }
   getitem(value: any) {
     this.dataset.select = value;
-    // console.log(this.dataset.select);
   }
 
 
