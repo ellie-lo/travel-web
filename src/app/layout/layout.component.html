@@ -4,7 +4,7 @@
     <button (click)="toggleClick(sideNav)" mat-icon-button color="" aria-label="Example icon button with a menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-    <div class="nav-logo"><img src="../../assets/img/LOGO.png" alt="Travel-logo"></div>
+    <div class="nav-logo"><img src="./assets/img/LOGO.png" alt="Travel-logo"></div>
   </div>
 </mat-toolbar>
 
@@ -16,7 +16,7 @@
       <div class="navlogo clickimage">
         <!-- <a routerLink="/main"> -->
           <a (click)="refresh()">
-          <img width="116.5px" height="47px" src="../../assets/img/LOGO.png" alt="Travle">
+          <img width="116.5px" height="47px" src="./assets/img/LOGO.png" alt="Travle">
         </a>
       </div>
 
@@ -34,7 +34,7 @@
         <!-- <div tabindex="-1" (focusin)="openDrop($event)" class="inputgroup mgt24"> -->
         <span class="sidnavInput">{{CityName}}</span>
         <div class="iconframe">
-          <img src="../../assets/img/Arrow - Down Circle.png" alt="">
+          <img src="./assets/img/ArrowDownCircle.png" alt="">
         </div>
         <!-- search-dropdown -->
         <div *ngIf="isActive" class="search-dropdown" #dropdown>
