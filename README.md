@@ -12,4 +12,4 @@
 *  獨自練習過程感謝有前端工程師友人(@John718499)指導
   
 ### 成果展示
-* http://travelweb.ddns.net/main
+*  https://ellie-lo.github.io/travel-web/main
