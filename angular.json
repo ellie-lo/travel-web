@@ -125,6 +125,14 @@
               "devServerTarget": "travle1:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/travel-web/",
+            "name": "Ellie-lo",
+            "email": "avony82@gmail.com"
+          }
         }
       }
     }
