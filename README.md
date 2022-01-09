@@ -1,27 +1,15 @@
-# Travle1
+## Travle1前端網站
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
+### 使用技術與資源
+* This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
+* 參與The F2E 前端 & UI 修煉精神時光屋活動第一階段 https://2021.thef2e.com/
+* 採用jhen設計師版型[figma] https://2021.thef2e.com/users/6296427084285739194/
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 第一階段台灣旅遊導覽
+*  第一次使用Angular框架架設網站
+*  製作時間2021/11/7~2021/12/23
+*  前半段時間練習架站，11月底開始切版12月中API串接練習，修正後嘗試發布上版到google cloud
+*  獨自練習過程感謝有前端工程師友人(John718499)指導
+  
+### 成果展示
+* http://travelweb.ddns.net/main
