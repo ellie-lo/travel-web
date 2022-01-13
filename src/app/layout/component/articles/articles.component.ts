@@ -49,7 +49,7 @@ export class ArticlesComponent implements OnInit {
   /*判斷有沒有圖片*/
   getpicture(url: string) {
     if (!url) {
-      return '../../../../assets/img/no-image-icon.jpg';
+      return './assets/img/noimage.jpg';
     }
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
