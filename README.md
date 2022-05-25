@@ -1,4 +1,5 @@
 ## Travle1前端網站
+* 目前關閉API放置的雲端空間，無法撈取到資料，只能觀看切版
 
 ### 使用技術與資源
 * This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
